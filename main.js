@@ -8,7 +8,8 @@ $(document).ready(function () {
         data: {},
         success: function (data) {
             $.each( data, function( index, val ) {
-                let $gridColDiv = $('#gridCol' + index);
+                let $rowDiv = $('#rowDiv');
+                let $gridColDiv = $('<div class="col-xs-12 col-md-6 col-lg-4"></div>');
                 let $cardDiv = $('<div>');
 
                 $cardDiv.addClass('card');
@@ -31,6 +32,8 @@ $(document).ready(function () {
                 $cardDiv.append($channelTitle);
 
                 $gridColDiv.append($cardDiv);
+
+                $rowDiv.append($gridColDiv);
             });
         }
     });
